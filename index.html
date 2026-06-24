@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>John Wesley — Full Stack Developer</title>
+<meta name="description" content="John Wesley — Full Stack & MERN Developer building scalable systems. Computer Science student at SRKR Engineering College. 100+ DSA problems solved.">
+<meta name="keywords" content="John Wesley, Full Stack Developer, MERN Developer, React Developer, SRKR Engineering College">
+<meta name="author" content="John Wesley">
+
+<!-- Open Graph -->
+<meta property="og:title" content="John Wesley — Full Stack Developer">
+<meta property="og:description" content="Building scalable full-stack applications and solving real-world problems.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/og-image.png">
+<meta property="og:url" content="https://johnwesley.dev">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>&#62;_</text></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============ BOOT / LOADING SCREEN ============ -->
+<div id="boot-screen" aria-hidden="true">
+  <div class="boot-window">
+    <div class="boot-bar">
+      <span class="boot-dot r"></span><span class="boot-dot y"></span><span class="boot-dot g"></span>
+      <span class="boot-title">wesley@portfolio — zsh</span>
+    </div>
+    <div class="boot-body">
+      <p><span class="boot-prompt">$</span> <span id="boot-line-1"></span></p>
+      <p><span class="boot-prompt">$</span> <span id="boot-line-2"></span></p>
+      <p id="boot-line-3-wrap"><span class="boot-prompt">$</span> <span id="boot-line-3"></span></p>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SCROLL PROGRESS BAR ============ -->
+<div id="scroll-progress" aria-hidden="true"></div>
+
+<!-- ============ NAVIGATION ============ -->
+<header id="site-header">
+  <nav class="nav-wrap" aria-label="Primary">
+    <a href="#hero" class="logo" aria-label="Home">
+      <span class="logo-bracket">&lt;</span>JW<span class="logo-bracket">/&gt;</span>
+    </a>
+    <button id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul id="nav-links">
+      <li><a href="#about" class="nav-link">about</a></li>
+      <li><a href="#skills" class="nav-link">skills</a></li>
+      <li><a href="#projects" class="nav-link">projects</a></li>
+      <li><a href="#dsa" class="nav-link">dsa</a></li>
+      <li><a href="#github" class="nav-link">github</a></li>
+      <li><a href="#timeline" class="nav-link">timeline</a></li>
+      <li><a href="#contact" class="nav-link nav-cta">contact</a></li>
+    </ul>
+    <button id="theme-toggle" aria-label="Toggle light and dark theme" title="Toggle theme">
+      <svg id="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 12.5A9 9 0 1 1 11.5 3a7 7 0 0 0 9.5 9.5Z"/></svg>
+      <svg id="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" hidden><circle cx="12" cy="12" r="4.5"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+    </button>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ============ HERO ============ -->
+  <section id="hero">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <p class="eyebrow mono">// whoami</p>
+        <h1>
+          Hi, I'm <span class="text-gradient">John Wesley</span>
+        </h1>
+        <p class="hero-role mono">
+          <span id="typed-role">Full Stack Developer</span><span class="cursor-blink">_</span>
+        </p>
+        <p class="hero-sub">
+          Computer Science student at SRKR Engineering College, 3rd year — building scalable full-stack applications and solving real-world problems, one commit at a time.
+        </p>
+        <div class="hero-ctas">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="#contact" class="btn btn-ghost">Contact Me</a>
+        </div>
+        <div class="hero-stats mono">
+          <div><span class="stat-num" data-count="9.05" data-decimals="2">0</span><span class="stat-label">CGPA</span></div>
+          <div><span class="stat-num" data-count="100" data-suffix="+">0</span><span class="stat-label">Problems Solved</span></div>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="editor-window">
+          <div class="boot-bar">
+            <span class="boot-dot r"></span><span class="boot-dot y"></span><span class="boot-dot g"></span>
+            <span class="boot-title">profile.js</span>
+          </div>
+          <pre class="code-block"><code><span class="tok-key">const</span> <span class="tok-var">johnWesley</span> = {
+  <span class="tok-prop">role</span>: <span class="tok-str">"Full Stack Developer"</span>,
+  <span class="tok-prop">stack</span>: <span class="tok-str">"MERN"</span>,
+  <span class="tok-prop">college</span>: <span class="tok-str">"SRKR Engineering"</span>,
+  <span class="tok-prop">year</span>: <span class="tok-num">3</span>,
+  <span class="tok-prop">cgpa</span>: <span class="tok-num">9.05</span>,
+  <span class="tok-prop">passion</span>: [
+    <span class="tok-str">"scalable systems"</span>,
+    <span class="tok-str">"microservices"</span>,
+    <span class="tok-str">"DSA"</span>
+  ],
+  <span class="tok-prop">status</span>: <span class="tok-str">"open to opportunities"</span>
+};</code></pre>
+        </div>
+        <div class="orbit-ring" aria-hidden="true"></div>
+      </div>
+    </div>
+    <a href="#about" class="scroll-cue" aria-label="Scroll to About section">
+      <span class="mono">scroll</span>
+      <span class="scroll-line"></span>
+    </a>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section id="about" class="section">
+    <p class="eyebrow mono section-fade">// 01 — about</p>
+    <h2 class="section-title section-fade">The short version</h2>
+    <div class="about-grid">
+      <div class="about-copy section-fade">
+        <p>
+          I'm a 3rd-year Computer Science Engineering student at <strong>SRKR Engineering College</strong>, currently holding a <strong>9.05 CGPA</strong>. Most of my time goes into building full-stack applications with the MERN stack and figuring out how systems behave when you push real load through them.
+        </p>
+        <p>
+          I'm drawn to the backend side of things — designing services that talk to each other cleanly, caching the right things with Redis, and keeping real-time data moving over WebSockets. Outside of project work, I spend a fair chunk of every day on data structures and algorithms — currently past 100 problems solved across LeetCode and GeeksforGeeks.
+        </p>
+      </div>
+      <div class="about-cards">
+        <div class="info-card section-fade">
+          <span class="info-icon mono">[ed]</span>
+          <h3>Education</h3>
+          <p>B.Tech, Computer Science Engineering<br>SRKR Engineering College</p>
+          <p class="info-meta mono">3rd Year · CGPA 9.05</p>
+        </div>
+        <div class="info-card section-fade">
+          <span class="info-icon mono">[dev]</span>
+          <h3>Experience</h3>
+          <p>Student Developer building production-style full-stack projects with microservice architecture.</p>
+          <p class="info-meta mono">MERN · Redis · WebSockets</p>
+        </div>
+        <div class="info-card section-fade">
+          <span class="info-icon mono">[dsa]</span>
+          <h3>Problem Solving</h3>
+          <p>Consistent daily practice across data structures, algorithms, and system design fundamentals.</p>
+          <p class="info-meta mono">100+ Problems Solved</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section id="skills" class="section">
+    <p class="eyebrow mono section-fade">// 02 — skills</p>
+    <h2 class="section-title section-fade">What I build with</h2>
+
+    <div class="skills-grid">
+
+      <div class="skill-category section-fade">
+        <h3 class="skill-cat-title"><span class="cat-dot dot-blue"></span>Frontend</h3>
+        <ul class="skill-list">
+          <li class="skill-item"><span class="skill-name">HTML5</span><div class="skill-bar"><div class="skill-fill" style="--level:92%"></div></div></li>
+          <li class="skill-item"><span class="skill-name">CSS3</span><div class="skill-bar"><div class="skill-fill" style="--level:90%"></div></div></li>
+          <li class="skill-item"><span class="skill-name">JavaScript</span><div class="skill-bar"><div class="skill-fill" style="--level:88%"></div></div></li>
+          <li class="skill-item"><span class="skill-name">React.js</span><div class="skill-bar"><div class="skill-fill" style="--level:90%"></div></div></li>
+          <li class="skill-item"><span class="skill-name">Tailwind CSS</span><div class="skill-bar"><div class="skill-fill" style="--level:88%"></div></div></li>
+          <li class="skill-item"><span class="skill-name">Bootstrap</span><div class="skill-bar"><div class="skill-fill" style="--level:80%"></div></div></li>
+        </ul>
+      </div>
+
+      <div class="skill-category section-fade">
+        <h3 class="skill-cat-title"><span class="cat-dot dot-violet"></span>Backend</h3>
+        <ul class="skill-list">
+          <li class="skill-item"><span class="skill-name">Node.js</span><div class="skill-bar"><div class="skill-fill" style="--level:88%"></div></div></li>
+          <li class="skill-item"><span class="skill-name">Express.js</span><div class="skill-bar"><div class="skill-fill" style="--level:87%"></div></div></li>
+          <li class="skill-item"><span class="skill-name">REST APIs</span><div class="skill-bar"><div class="skill-fill" style="--level:90%"></div></div></li>
+          <li class="skill-item"><span class="skill-name">WebSockets</span><div class="skill-bar"><div class="skill-fill" style="--level:80%"></div></div></li>
+        </ul>
+      </div>
+
+      <div class="skill-category section-fade">
+        <h3 class="skill-cat-title"><span class="cat-dot dot-teal"></span>Databases</h3>
+        <ul class="skill-list">
+          <li class="skill-item"><span class="skill-name">MongoDB</span><div class="skill-bar"><div class="skill-fill" style="--level:88%"></div></div></li>
+          <li class="skill-item"><span class="skill-name">SQL</span><div class="skill-bar"><div class="skill-fill" style="--level:80%"></div></div></li>
+        </ul>
+      </div>
+
+      <div class="skill-category section-fade">
+        <h3 class="skill-cat-title"><span class="cat-dot dot-blue"></span>Languages</h3>
+        <ul class="skill-list">
+          <li class="skill-item"><span class="skill-name">Python</span><div class="skill-bar"><div class="skill-fill" style="--level:85%"></div></div></li>
+          <li class="skill-item"><span class="skill-name">Java</span><div class="skill-bar"><div class="skill-fill" style="--level:82%"></div></div></li>
+          <li class="skill-item"><span class="skill-name">C</span><div class="skill-bar"><div class="skill-fill" style="--level:80%"></div></div></li>
+        </ul>
+      </div>
+
+      <div class="skill-category section-fade">
+        <h3 class="skill-cat-title"><span class="cat-dot dot-violet"></span>Architecture</h3>
+        <ul class="skill-list">
+          <li class="skill-item"><span class="skill-name">Microservices</span><div class="skill-bar"><div class="skill-fill" style="--level:80%"></div></div></li>
+          <li class="skill-item"><span class="skill-name">Redis</span><div class="skill-bar"><div class="skill-fill" style="--level:78%"></div></div></li>
+        </ul>
+      </div>
+
+      <div class="skill-category section-fade">
+        <h3 class="skill-cat-title"><span class="cat-dot dot-teal"></span>DevOps</h3>
+        <ul class="skill-list">
+          <li class="skill-item"><span class="skill-name">Docker</span><div class="skill-bar"><div class="skill-fill" style="--level:75%"></div></div></li>
+          <li class="skill-item"><span class="skill-name">Git &amp; GitHub</span><div class="skill-bar"><div class="skill-fill" style="--level:88%"></div></div></li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section id="projects" class="section">
+    <p class="eyebrow mono section-fade">// 03 — projects</p>
+    <h2 class="section-title section-fade">Things I've shipped</h2>
+
+    <div class="filter-bar section-fade" role="tablist" aria-label="Filter projects by technology">
+      <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+      <button class="filter-btn" data-filter="microservices" role="tab" aria-selected="false">Microservices</button>
+      <button class="filter-btn" data-filter="mern" role="tab" aria-selected="false">MERN</button>
+      <button class="filter-btn" data-filter="clone" role="tab" aria-selected="false">Clones</button>
+    </div>
+
+    <!-- Featured Project -->
+    <article class="project-featured section-fade" data-tags="microservices mern clone">
+      <div class="project-featured-visual">
+        <div class="arch-diagram" aria-hidden="true">
+          <svg viewBox="0 0 360 260" class="arch-svg">
+            <rect x="140" y="8" width="80" height="34" rx="6" class="arch-node arch-node-main"/>
+            <text x="180" y="29" class="arch-text">Client</text>
+
+            <line x1="180" y1="42" x2="180" y2="64" class="arch-line"/>
+            <rect x="130" y="64" width="100" height="34" rx="6" class="arch-node arch-node-gw"/>
+            <text x="180" y="85" class="arch-text">API Gateway</text>
+
+            <line x1="180" y1="98" x2="70" y2="138" class="arch-line"/>
+            <line x1="180" y1="98" x2="180" y2="138" class="arch-line"/>
+            <line x1="180" y1="98" x2="290" y2="138" class="arch-line"/>
+
+            <rect x="20" y="138" width="100" height="34" rx="6" class="arch-node"/>
+            <text x="70" y="159" class="arch-text">Auth Service</text>
+
+            <rect x="130" y="138" width="100" height="34" rx="6" class="arch-node"/>
+            <text x="180" y="159" class="arch-text">Order Service</text>
+
+            <rect x="240" y="138" width="100" height="34" rx="6" class="arch-node"/>
+            <text x="290" y="159" class="arch-text">Live Updates</text>
+
+            <line x1="70" y1="172" x2="70" y2="200" class="arch-line"/>
+            <line x1="180" y1="172" x2="120" y2="200" class="arch-line"/>
+            <line x1="290" y1="172" x2="290" y2="200" class="arch-line"/>
+
+            <rect x="20" y="200" width="100" height="34" rx="6" class="arch-node arch-node-db"/>
+            <text x="70" y="221" class="arch-text">MongoDB</text>
+
+            <rect x="240" y="200" width="100" height="34" rx="6" class="arch-node arch-node-db"/>
+            <text x="290" y="221" class="arch-text">Redis + WS</text>
+          </svg>
+        </div>
+      </div>
+      <div class="project-featured-copy">
+        <span class="project-kicker mono">featured build</span>
+        <h3>Blinkit Clone — Microservice Grocery Platform</h3>
+        <p>
+          A full-stack quick-commerce clone built around a microservices architecture rather than a single monolith. Redis backs the caching layer; WebSockets push live order status without polling.
+        </p>
+        <ul class="project-features mono">
+          <li>JWT-based authentication across services</li>
+          <li>Real-time order tracking via WebSockets</li>
+          <li>Independently scalable service boundaries</li>
+          <li>Fully responsive storefront UI</li>
+        </ul>
+        <div class="project-tags">
+          <span class="tag">React</span><span class="tag">Node.js</span><span class="tag">Redis</span><span class="tag">WebSockets</span><span class="tag">MongoDB</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/John-WesleyS" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">GitHub →</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Project grid -->
+    <div class="project-grid">
+      <article class="project-card section-fade" data-tags="mern clone">
+        <div class="project-card-top">
+          <span class="project-emoji" aria-hidden="true">🛒</span>
+          <span class="project-kicker mono">clone build</span>
+        </div>
+        <h3>Amazon Clone</h3>
+        <p>E-commerce storefront with cart, checkout flow, and product catalog built on the MERN stack.</p>
+        <div class="project-tags"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">MongoDB</span></div>
+        <div class="project-links">
+          <a href="https://github.com/John-WesleyS" target="_blank" rel="noopener" class="card-link">GitHub</a>
+        </div>
+      </article>
+
+      <article class="project-card section-fade" data-tags="mern clone">
+        <div class="project-card-top">
+          <span class="project-emoji" aria-hidden="true">🎬</span>
+          <span class="project-kicker mono">clone build</span>
+        </div>
+        <h3>Netflix Clone</h3>
+        <p>Streaming-style browse UI with category rows, modals, and responsive media grids.</p>
+        <div class="project-tags"><span class="tag">React</span><span class="tag">Tailwind CSS</span></div>
+        <div class="project-links">
+          <a href="https://github.com/John-WesleyS" target="_blank" rel="noopener" class="card-link">GitHub</a>
+        </div>
+      </article>
+
+      <article class="project-card section-fade" data-tags="mern clone">
+        <div class="project-card-top">
+          <span class="project-emoji" aria-hidden="true">📦</span>
+          <span class="project-kicker mono">clone build</span>
+        </div>
+        <h3>Flipkart Clone</h3>
+        <p>Multi-category marketplace UI with filtering, search, and a persistent cart state.</p>
+        <div class="project-tags"><span class="tag">Frontend</span><span class="tag">Bootstrap</span></div>
+        <div class="project-links">
+          <a href="https://github.com/John-WesleyS" target="_blank" rel="noopener" class="card-link">GitHub</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ DSA ============ -->
+  <section id="dsa" class="section">
+    <p class="eyebrow mono section-fade">// 04 — dsa</p>
+    <h2 class="section-title section-fade">Problem solving, daily</h2>
+    <p class="section-lead section-fade">Most progress here doesn't show up in a portfolio — so here's the part that's countable.</p>
+
+    <div class="dsa-grid">
+      <div class="dsa-counter-card section-fade">
+        <span class="dsa-counter mono" data-count="100" data-suffix="+">0</span>
+        <span class="dsa-counter-label">Problems Solved</span>
+        <div class="dsa-badges">
+          <span class="badge">Arrays</span><span class="badge">Linked Lists</span><span class="badge">Heap</span><span class="badge">Recursion</span><span class="badge">Stack</span><span class="badge">Queues</span>
+        </div>
+      </div>
+
+      <a href="https://leetcode.com/u/e0oSsPkMfr/" target="_blank" rel="noopener" class="dsa-profile-card section-fade">
+        <div class="dsa-profile-head">
+          <span class="dsa-platform-icon" aria-hidden="true">{ }</span>
+          <h3>LeetCode</h3>
+        </div>
+        <p class="mono">e0oSsPkMfr</p>
+        <span class="card-link">View Profile →</span>
+      </a>
+
+      <a href="https://www.geeksforgeeks.org/profile/johnwesleyry6w" target="_blank" rel="noopener" class="dsa-profile-card section-fade">
+        <div class="dsa-profile-head">
+          <span class="dsa-platform-icon" aria-hidden="true">&lt;/&gt;</span>
+          <h3>GeeksforGeeks</h3>
+        </div>
+        <p class="mono">johnwesleyry6w</p>
+        <span class="card-link">View Profile →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ GITHUB ============ -->
+  <section id="github" class="section">
+    <p class="eyebrow mono section-fade">// 05 — github</p>
+    <h2 class="section-title section-fade">Out in the open</h2>
+    <p class="section-lead section-fade">
+      <a href="https://github.com/John-WesleyS" target="_blank" rel="noopener" class="inline-link">github.com/John-WesleyS</a>
+    </p>
+
+    <div class="github-grid">
+      <div class="gh-card gh-card-wide section-fade">
+        <h3 class="gh-card-title mono">pinned repositories</h3>
+        <div class="gh-repo-list" id="gh-repo-list">
+          <a href="https://github.com/John-WesleyS" target="_blank" rel="noopener" class="gh-repo-item">
+            <span class="gh-repo-name mono">blinkit-microservices</span>
+            <span class="gh-repo-desc">Microservice-based quick-commerce clone with Redis + WebSockets</span>
+            <span class="gh-repo-meta mono">● JavaScript</span>
+          </a>
+          <a href="https://github.com/John-WesleyS" target="_blank" rel="noopener" class="gh-repo-item">
+            <span class="gh-repo-name mono">mern-amazon-clone</span>
+            <span class="gh-repo-desc">Full-stack e-commerce build on the MERN stack</span>
+            <span class="gh-repo-meta mono">● JavaScript</span>
+          </a>
+          <a href="https://github.com/John-WesleyS" target="_blank" rel="noopener" class="gh-repo-item">
+            <span class="gh-repo-name mono">netflix-clone-react</span>
+            <span class="gh-repo-desc">Streaming UI clone with React and a public movie API</span>
+            <span class="gh-repo-meta mono">● JavaScript</span>
+          </a>
+          <a href="https://github.com/John-WesleyS" target="_blank" rel="noopener" class="gh-repo-item">
+            <span class="gh-repo-name mono">dsa-practice</span>
+            <span class="gh-repo-desc">100+ solved problems, organized by topic and pattern</span>
+            <span class="gh-repo-meta mono">● Python · Java · JavaScript</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TIMELINE ============ -->
+  <section id="timeline" class="section">
+    <p class="eyebrow mono section-fade">// 06 — timeline</p>
+    <h2 class="section-title section-fade">How this happened</h2>
+
+    <div class="timeline">
+      <div class="timeline-item section-fade">
+        <div class="timeline-marker mono">2024</div>
+        <div class="timeline-content">
+          <h3>Started Full Stack Development</h3>
+          <p>Picked up HTML, CSS, and JavaScript fundamentals, then moved into React and Node.js — the start of the MERN path.</p>
+        </div>
+      </div>
+      <div class="timeline-item section-fade">
+        <div class="timeline-marker mono">2025</div>
+        <div class="timeline-content">
+          <h3>Built Multiple Full-Stack Clones</h3>
+          <p>Shipped Amazon, Netflix, and Flipkart clones to get comfortable with real-world UI patterns, state management, and APIs.</p>
+        </div>
+      </div>
+      <div class="timeline-item section-fade">
+        <div class="timeline-marker mono">2026</div>
+        <div class="timeline-content">
+          <h3>Built Blinkit Microservices Project</h3>
+          <p>Moved past monoliths — designed a microservice architecture with Redis caching and WebSocket-driven live updates.</p>
+        </div>
+      </div>
+      <div class="timeline-item section-fade timeline-future">
+        <div class="timeline-marker mono">next</div>
+        <div class="timeline-content">
+          <h3>Software Engineer</h3>
+          <p>Looking to bring that systems-first thinking to a team building products at scale.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contact" class="section">
+    <p class="eyebrow mono section-fade">// 07 — contact</p>
+    <h2 class="section-title section-fade">Let's talk</h2>
+    <p class="section-lead section-fade">Open to internships, full-time roles, and interesting problems. Reach out — I reply quickly.</p>
+
+    <div class="contact-grid">
+      <div class="contact-info section-fade">
+        <a class="contact-row" id="copy-email" href="mailto:johnwesleybarre588@gmail.com" aria-label="Send email to John Wesley">
+          <span class="contact-icon mono">@</span>
+          <span class="contact-detail">
+            <span class="contact-label mono">email</span>
+            <span class="contact-value">johnwesleybarre588@gmail.com</span>
+          </span>
+          <span class="copy-feedback mono" id="copy-feedback">copy</span>
+        </a>
+
+        <a class="contact-row" href="tel:+917997578243">
+          <span class="contact-icon mono">#</span>
+          <span class="contact-detail">
+            <span class="contact-label mono">phone</span>
+            <span class="contact-value">+91 79975 78243</span>
+          </span>
+        </a>
+
+        <a class="contact-row" href="https://www.linkedin.com/in/john-wesley-696030351/" target="_blank" rel="noopener">
+          <span class="contact-icon mono">in</span>
+          <span class="contact-detail">
+            <span class="contact-label mono">linkedin</span>
+            <span class="contact-value">john-wesley-696030351</span>
+          </span>
+        </a>
+
+        <a class="contact-row" href="https://github.com/John-WesleyS" target="_blank" rel="noopener">
+          <span class="contact-icon mono">gh</span>
+          <span class="contact-detail">
+            <span class="contact-label mono">github</span>
+            <span class="contact-value">John-WesleyS</span>
+          </span>
+        </a>
+      </div>
+
+      <form class="contact-form section-fade" id="contact-form" novalidate>
+        <div class="form-row">
+          <label for="name" class="mono">name</label>
+          <input type="text" id="name" name="name" required autocomplete="name">
+        </div>
+        <div class="form-row">
+          <label for="email" class="mono">email</label>
+          <input type="email" id="email" name="email" required autocomplete="email">
+        </div>
+        <div class="form-row">
+          <label for="message" class="mono">message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" id="form-submit">Send Message</button>
+        <p class="form-status mono" id="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer id="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#hero" class="logo"><span class="logo-bracket">&lt;</span>JW<span class="logo-bracket">/&gt;</span></a>
+      <p>Full Stack Developer building scalable systems, one commit at a time.</p>
+    </div>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#dsa">DSA</a>
+      <a href="#github">GitHub</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="footer-social">
+      <a class="footer-social-link github" href="https://github.com/John-WesleyS" target="_blank" rel="noopener" aria-label="GitHub">gh</a>
+      <a class="footer-social-link linkedin" href="https://www.linkedin.com/in/john-wesley-696030351/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+      <a class="footer-social-link leetcode" href="https://leetcode.com/u/e0oSsPkMfr/" target="_blank" rel="noopener" aria-label="LeetCode">lc</a>
+      <a class="footer-social-link email" href="mailto:johnwesleybarre588@gmail.com" aria-label="Email">@</a>
+    </div>
+  </div>
+  <div class="footer-bottom mono">
+    <span>© <span id="footer-year"></span> John Wesley. All rights reserved.</span>
+    <span>Built with HTML, CSS &amp; JS</span>
+  </div>
+</footer>
+
+<!-- ============ BACK TO TOP ============ -->
+<button id="back-to-top" aria-label="Back to top">↑</button>
+
+<!-- ============ STATUS BAR (signature element) ============ -->
+<div id="status-bar" class="mono" aria-hidden="true">
+  <span id="status-section">hero.section</span>
+  <span class="status-sep">|</span>
+  <span id="status-scroll">0%</span>
+  <span class="status-sep">|</span>
+  <span id="status-cursor">●</span>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
